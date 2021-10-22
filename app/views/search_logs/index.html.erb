@@ -1,0 +1,107 @@
+<p id="notice"><%= notice %></p>
+
+
+
+
+<%= form_with url: "/", method: :get,class:"mb-3" do |form|  %>
+  <%= form.label :q, "Search for:" ,class:"form-label" %>
+  <%= form.number_field :q, class:"form-control", placeholder:"enter zipCode" %></br>
+
+  <div class="input-group">
+    <span class="input-group-text">year-month-day</span>
+    <%= form.number_field :year, class:"form-control", placeholder:"enter year" %></br>
+
+    <%= form.number_field :month, class:"form-control", placeholder:"enter month" ,max:"12"%></br>
+
+    <%= form.number_field :day, class:"form-control", placeholder:"enter day" ,max:"31"%></br>
+  </div>
+
+  <%= form.submit "Search" ,class:"btn btn-primary"%>
+<% end %>
+
+    
+</ul>
+<div>
+<table class="invoice-table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+        <% @output[0].each do |subItem| %> 
+            <th scope="col"><%= subItem[0] %></th>
+        <% end %>
+    </tr>
+  </thead>
+  <tbody>
+    <% @output.each_with_index do |item, index| %>
+        <tr >
+            <th scope="row"><%= index + 1 %></th>
+            <% item.each do |subItem| %> 
+            
+              <% if subItem[0]== "Category" %>
+              <% else %>   
+                  <td><%= subItem[1] %></td>
+              <% end %>
+            <% end %>
+
+
+            <td>
+              <%= form_for :search_log ,url: { action: "create" } do |form| %>
+      
+                
+
+                <div class="field">
+                  <%= form.text_field :date_issue ,value:@output[index]["DateIssue"],type:"hidden"%>
+                </div>
+
+                <div class="field">
+                  <%= form.text_field :date_forcast ,value:@output[index]["DateForecast"],type:"hidden"%>
+                </div>
+
+                <div class="field">
+                  <%= form.text_field :reporting_area,value:@output[index]["ReportingArea"],type:"hidden"%>
+                </div>
+
+                <div class="field">
+                  <%= form.text_field :state_code ,value:@output[index]["StateCode"],type:"hidden"%>
+                </div>
+
+                <div class="field">
+                  <%= form.text_field :latitude ,value:@output[index]["Latitude"],type:"hidden"%>
+                </div>
+
+                <div class="field">
+                  <%= form.text_field :longitude ,value:@output[index]["Longitude"],type:"hidden"%>
+                </div>
+
+                <div class="field">
+                  <%= form.text_field :parameter_name ,value:@output[index]["ParameterName"],type:"hidden"%>
+                </div>
+
+                <div class="field">
+                  <%= form.number_field :aqi,value:@output[index]["AQI"],type:"hidden"%>
+                </div>
+
+                <div class="field">
+                  <%= form.text_field :action_day,value:@output[index]["ActionDay"],type:"hidden"%>
+                </div>
+
+                <div class="field">
+                  <%= form.text_field :disscussion ,value:@output[index]["Discussion"],type:"hidden"%>
+                </div>
+
+                <div class="actions">
+                  <%= form.submit "Save" ,class:"btn btn-success" %>
+                </div>
+              <% end %>
+          </td>
+        </tr>
+     <% end %>
+  </tbody>
+</table>
+</div>
+
+<% @output %>
+<%= @date %>
+<%= @dateString %>
+
+

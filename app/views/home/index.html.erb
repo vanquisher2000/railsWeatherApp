@@ -1,0 +1,42 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Search Logs</h1>
+<div >
+<table class="invoice-table">
+  <thead>
+    <tr>
+      <th>Date issue</th>
+      <th>Date forcast</th>
+      <th>Reporting area</th>
+      <th>State code</th>
+      <th>Latitude</th>
+      <th>Longitude</th>
+      <th>Parameter name</th>
+      <th>Aqi</th>
+      <th>Action day</th>
+      <th >Disscussion</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @search_logs.each do |search_log| %>
+      <tr>
+        <td><%= search_log.date_issue %></td>
+        <td><%= search_log.date_forcast %></td>
+        <td><%= search_log.reporting_area %></td>
+        <td><%= search_log.state_code %></td>
+        <td><%= search_log.latitude %></td>
+        <td><%= search_log.longitude %></td>
+        <td><%= search_log.parameter_name %></td>
+        <td><%= search_log.aqi %></td>
+        <td><%= search_log.action_day %></td>
+        <td><%= search_log.disscussion %></td>
+        <td><%= link_to 'Show', search_log %></td>
+        <td><%= link_to 'Edit', edit_search_log_path(search_log) %></td>
+        <td><%= link_to 'Destroy', search_log, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>

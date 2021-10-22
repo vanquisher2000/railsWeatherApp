@@ -1,0 +1,79 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ body{
+     background-color: rgb(161, 159, 159);
+ }
+.invoice-table{
+    border-collapse: collapse;
+    
+    background-color: white;
+    border-radius: 15px ;
+    box-shadow: 0px 10px 30px 5px rgba(0, 0, 0, 0.15);
+    margin: 25px auto;
+
+}
+.invoice-table thead tr{
+    border-bottom: 1px dashed;
+}
+
+.invoice-table thead tr th{
+    font-size: 16px;
+    letter-spacing: 1px;
+    color: gray;
+    padding: 8px;
+}
+
+.invoice-table tbody tr td{
+    padding: 8px;
+    color: blue;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.invoice-table tbody span{
+    font-size: small;
+}
+
+ tr > td:hover {
+    overflow: visible;
+    white-space: unset;
+}
+
+
+  table td, table th {
+    height: 50px;
+    max-width: 150px;
+    cursor: pointer;
+    word-break: break-all;
+    white-space: nowrap;
+    text-align: center;
+    padding: 10px;
+  }
+  table tr:nth-child(even) {
+    background-color: white;
+  }
+  table tr:hover {
+    background-color: yellowgreen;
+    overflow: visible;
+    white-space: normal;
+    height: auto;
+    max-width: 200px;
+    width: fit-content;
+    border-radius: 50px;
+  }
+  
+  

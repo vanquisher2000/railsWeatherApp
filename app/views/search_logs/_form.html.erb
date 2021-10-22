@@ -1,0 +1,68 @@
+<%= form_with(model: search_log) do |form| %>
+  <% if search_log.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(search_log.errors.count, "error") %> prohibited this search_log from being saved:</h2>
+
+      <ul>
+        <% search_log.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :date_issue ,class:"form-label"%>
+    <%= form.text_field :date_issue ,class:"form-control"%>
+  </div>
+
+  <div class="field">
+    <%= form.label :date_forcast ,class:"form-label"%>
+    <%= form.text_field :date_forcast ,class:"form-control"%>
+  </div>
+
+  <div class="field">
+    <%= form.label :reporting_area ,class:"form-label"%>
+    <%= form.text_field :reporting_area ,class:"form-control"%>
+  </div>
+
+  <div class="field">
+    <%= form.label :state_code ,class:"form-label"%>
+    <%= form.text_field :state_code ,class:"form-control"%>
+  </div>
+
+  <div class="field">
+    <%= form.label :latitude ,class:"form-label"%>
+    <%= form.text_field :latitude ,class:"form-control"%>
+  </div>
+
+  <div class="field">
+    <%= form.label :longitude ,class:"form-label"%>
+    <%= form.text_field :longitude ,class:"form-control"%>
+  </div>
+
+  <div class="field">
+    <%= form.label :parameter_name ,class:"form-label"%>
+    <%= form.text_field :parameter_name ,class:"form-control"%>
+  </div>
+
+  <div class="field">
+    <%= form.label :aqi ,class:"form-label"%>
+    <%= form.number_field :aqi ,class:"form-control"%>
+  </div>
+
+  <div class="field">
+    <%= form.label :action_day ,class:"form-label"%>
+    <%= form.text_field :action_day ,class:"form-control"%>
+  </div>
+
+  <div class="field">
+    <%= form.label :disscussion ,class:"form-label"%>
+    <%= form.text_field :disscussion ,class:"form-control"%>
+  </div>
+</br>
+  <div class="actions">
+    <%= form.submit class:"btn btn-primary"%>
+  </div>
+<% end %>
+</br>

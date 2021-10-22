@@ -1,0 +1,48 @@
+<p id="notice"><%= notice %></p>
+
+
+<ul class="list-group list-group-horizontal">
+  <li class="list-group-item flex-fill">Date issue:</li>
+  <li class="list-group-item flex-fill">  <%= @search_log.date_issue %></li>
+</ul>
+<ul class="list-group list-group-horizontal">
+  <li class="list-group-item flex-fill">Date Forecast:</li>
+  <li class="list-group-item flex-fill"><%= @search_log.date_forcast %></li>
+</ul>
+<ul class="list-group list-group-horizontal">
+  <li class="list-group-item flex-fill">Reporting Area:</li>
+  <li class="list-group-item flex-fill"><%= @search_log.reporting_area %></li>
+</ul>
+<ul class="list-group list-group-horizontal">
+  <li class="list-group-item flex-fill">State Code:</li>
+  <li class="list-group-item flex-fill"><%= @search_log.state_code %></li>
+</ul>
+<ul class="list-group list-group-horizontal">
+  <li class="list-group-item flex-fill">Latitude:</li>
+  <li class="list-group-item flex-fill"><%= @search_log.latitude %></li>
+</ul>
+<ul class="list-group list-group-horizontal">
+  <li class="list-group-item flex-fill">Longitude:</li>
+  <li class="list-group-item flex-fill"><%= @search_log.longitude %></li>
+</ul>
+<ul class="list-group list-group-horizontal">
+  <li class="list-group-item flex-fill">Parameter Name:</li>
+  <li class="list-group-item flex-fill"><%= @search_log.parameter_name %></li>
+</ul>
+<ul class="list-group list-group-horizontal">
+  <li class="list-group-item flex-fill">AQI: </li>
+  <li class="list-group-item flex-fill"><%= @search_log.aqi %></li>
+</ul>
+<ul class="list-group list-group-horizontal">
+  <li class="list-group-item flex-fill">Action Day</li>
+  <li class="list-group-item flex-fill"><%= @search_log.action_day %></li>
+</ul>
+<ul class="list-group list-group-horizontal">
+  <li class="list-group-item flex-fill">Discussion</li>
+  <li class="list-group-item flex-fill"><%= @search_log.disscussion %></li>
+</ul>
+
+</br>
+
+<%= link_to 'Edit', edit_search_log_path(@search_log), class:"btn btn-primary"%> 
+<%= link_to 'Back', search_logs_path ,class:"btn btn-primary"%>
